@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+      <label for="username">Username: </label>
+      <input type="text" name="username" />
+
+        {% if invalid_user != '' %}
+        <span class='error'>{{ invalid_user }} </span>
+        {% endif %}
+
+
+
+      <label for="password">Password: </label>
+      <input type="text" name="password" />
+
+      {% if invalid_password != '' %}
+      <p class='error'>{{ invalid_password }} </p>
+      {% endif %}
+
+
+
+
+
+      <label for="password_repeat">Verify Password: </label>
+      <input type="text" name="password_repeat" />
+
+        {% if verification != '' %}
+        <p class='error'>{{ verification }} </p>
+        {% endif %}
+
+
+      <label for="email"> Email: </label>
+      <input type="text" name="email" />
+
+      {% if email_error != '' %}
+      <span class='error'>{{ email_error}}</span>
+      {% endif %}
+
+
+
+  <input type="submit" value="Go"/>
+</form>
+
+{% endblock %}
